@@ -5,7 +5,7 @@
 
 Como jogar :video_game:: 
 <ul>
-  <li></li>Execute o arquivo game.py para dar início ao jogo.</li>
+  <li>>Execute o arquivo game.py para dar início ao jogo.</li>
 </ul>
 
 Controles :video_game:
