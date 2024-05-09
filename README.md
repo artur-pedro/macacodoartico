@@ -5,7 +5,7 @@
 
 <h2>Como jogar video_game: </h2>
   <ul>
-    <li>Execute o arquivo **gh game.py** para dar início ao jogo.</li>
+    <li>Execute o arquivo 'game.py' para dar início ao jogo.</li>
   </ul>
 
 Controles :video_game:
