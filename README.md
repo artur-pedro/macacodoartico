@@ -3,8 +3,11 @@
   Você também possui a habilidade de jogar bolas de neve nos obstáculos.
 
 ## :pushpin: Requisitos
-- Ter o Python instalado.
-- Ter o Pygame instalado, pode ser instalado via `pip install pygame`.
+1. Ter o Python instalado.
+2. Ter o Pygame instalado.
+
+## Instalação do Pygame
+- Digite `pip install pygame` no seu pompt de comando para instalar o Pygame. Dependendo da distribuição e da versão que você estiver usando, use `pip3 install pygame` em vez disso.
 
 ##  :video_game: Como jogar
 - Execute o arquivo `game.py` para dar início ao jogo.
