@@ -397,9 +397,9 @@ bg_rect = bg.get_rect()
 scroll = 0
 panels = math.ceil(WIDTH / background_width) + 2
 # retângulo dos itens do gameover
-menu_rect = menu.get_rect(topleft = (WIDTH*0.44, HEIGHT*0.63))
+menu_rect = menu.get_rect(topleft = (WIDTH*0.444, HEIGHT*0.63))
 menu_rect2 = menu.get_rect(topleft = (WIDTH*0.4295, HEIGHT*0.6))
-novamente_rect = novamente.get_rect(topleft = (WIDTH*0.388, HEIGHT*0.5))
+novamente_rect = novamente.get_rect(topleft = (WIDTH*0.394, HEIGHT*0.5))
 # retângulo itens do iniciar/menu
 jogar_rect = jogar.get_rect(topleft = (WIDTH*0.43, HEIGHT*0.475))
 tutorial_rect = tutorial.get_rect(topleft = (WIDTH*0.43, HEIGHT*0.59))
