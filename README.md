@@ -3,10 +3,10 @@
 
 
 
-Como jogar :video_game:: 
-<ul>
-  <li>>Execute o arquivo game.py para dar início ao jogo.</li>
-</ul>
+<h2>Como jogar video_game: </h2>
+  <ul>
+    <li>Execute o arquivo game.py para dar início ao jogo.</li>
+  </ul>
 
 Controles :video_game:
 Espaço: Salta
