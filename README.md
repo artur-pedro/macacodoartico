@@ -15,4 +15,10 @@
 - Use a tecla **S** para deslizar.
 - Use a tecla **W** para diminuir a velocidade de queda no salto.
 - **Você pode fazer a combinação de diferentes teclas e criar outros tipos de movimentos**.
+##  👨‍💻 Desenvolvedor
+ - Pedro Artur.
+ - Graduando em Ciência da Computação.
+
+## 📝 Notas
+  - Jogo feito para obtenção da terceira nota da disciplina de Algoritmos I.
 
