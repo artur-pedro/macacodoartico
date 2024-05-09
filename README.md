@@ -3,9 +3,9 @@
 
 
 
-<h2>Como jogar video_game: </h2>
+<h2>Como jogar :video_game: </h2>
   <ul>
-    <li>Execute o arquivo `game.py` para dar início ao jogo.</li>
+    Execute o arquivo `game.py` para dar início ao jogo.
   </ul>
 
 Controles :video_game:
