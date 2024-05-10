@@ -397,9 +397,9 @@ bg_rect = bg.get_rect()
 scroll = 0
 panels = math.ceil(WIDTH / background_width) + 2
 # retângulo dos itens do gameover
-menu_rect = menu.get_rect(topleft = (WIDTH*0.444, HEIGHT*0.63))
+menu_rect = menu.get_rect(topleft = (WIDTH*0.46, HEIGHT*0.63))
 menu_rect2 = menu.get_rect(topleft = (WIDTH*0.4295, HEIGHT*0.6))
-novamente_rect = novamente.get_rect(topleft = (WIDTH*0.394, HEIGHT*0.5))
+novamente_rect = novamente.get_rect(topleft = (WIDTH*0.406, HEIGHT*0.5))
 # retângulo itens do iniciar/menu
 jogar_rect = jogar.get_rect(topleft = (WIDTH*0.43, HEIGHT*0.475))
 tutorial_rect = tutorial.get_rect(topleft = (WIDTH*0.43, HEIGHT*0.59))
@@ -698,13 +698,13 @@ while True:
         dificuldade = 800
         contadorbolas = False
         screen.blit(gameover,(0,0))
-        screen.blit(gameovermsg,(WIDTH*0.3899,HEIGHT*0.025))
+        screen.blit(gameovermsg,(WIDTH*0.405,HEIGHT*0.025))
         screen.blit(menu, menu_rect)
         screen.blit(novamente, novamente_rect)
         fonte_contador2 = pygame.font.Font(None, 70)
         contador_texto2 = fonte_contador2.render(f' {reserva}', True, (82, 113, 255))
-        screen.blit(contador_texto2, (WIDTH*0.58, HEIGHT*0.79))
-        screen.blit(SCORE,(WIDTH*0.42,HEIGHT*0.75))
+        screen.blit(contador_texto2, (WIDTH*0.499, HEIGHT*0.85))
+        screen.blit(SCORE,(WIDTH*0.443,HEIGHT*0.75))
         valor = 0
         contador = 0
         reserva2 = 0
