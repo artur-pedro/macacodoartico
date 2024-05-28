@@ -703,8 +703,8 @@ while True:
         screen.blit(novamente, novamente_rect)
         fonte_contador2 = pygame.font.Font(None, 70)
         contador_texto2 = fonte_contador2.render(f' {reserva}', True, (82, 113, 255))
-        screen.blit(contador_texto2, (WIDTH*0.499, HEIGHT*0.85))
-        screen.blit(SCORE,(WIDTH*0.443,HEIGHT*0.75))
+        screen.blit(contador_texto2, (WIDTH*0.591, HEIGHT*0.7888))
+        screen.blit(SCORE,(WIDTH*0.439,HEIGHT*0.75))
         valor = 0
         contador = 0
         reserva2 = 0
