@@ -11,27 +11,27 @@ class Player(pygame.sprite.Sprite):   #classe sprite para o player, sprite = sur
                                       # já o groupsingle é um grupo para apenas uma sprite (perfeito para a classe Player)
     def __init__(self):
         super().__init__()
-        macaco2 = pygame.image.load('macaco/macaco2.png').convert_alpha()  ### animações do macaco correndo
-        macaco3 = pygame.image.load('macaco/macaco3.png').convert_alpha()
-        macaco4 = pygame.image.load('macaco/macaco4.png').convert_alpha()
-        macaco5 = pygame.image.load('macaco/macaco5.png').convert_alpha()
-        macaco6 = pygame.image.load('macaco/macaco6.png').convert_alpha()
-        macaco7 = pygame.image.load('macaco/macaco7.png').convert_alpha()
+        macaco2 = pygame.image.load('assets/macaco/macaco2.png').convert_alpha()  ### animações do macaco correndo
+        macaco3 = pygame.image.load('assets/macaco/macaco3.png').convert_alpha()
+        macaco4 = pygame.image.load('assets/macaco/macaco4.png').convert_alpha()
+        macaco5 = pygame.image.load('assets/macaco/macaco5.png').convert_alpha()
+        macaco6 = pygame.image.load('assets/macaco/macaco6.png').convert_alpha()
+        macaco7 = pygame.image.load('assets/macaco/macaco7.png').convert_alpha()
         self.current_health = 100
         self.maximum_health = 100
         self.health_bar_length = 100
         self.health_ratio = self.maximum_health/self.health_bar_length
         self.player_walk = [macaco2, macaco3, macaco4, macaco5, macaco6, macaco7]  # colocar todos os frames dentro precisa usar (self) por que vamos acessar ele fora desse init
-        self.player_jump = pygame.image.load('macaco/macacojump.png').convert_alpha()  # frame jump
-        self.player_voando = pygame.image.load('macaco/macacovoando.png').convert_alpha() # frame voando
-        self.player_desviar = pygame.image.load('macaco/desviar.png').convert_alpha() # frame desviar
+        self.player_jump = pygame.image.load('assets/macaco/macacojump.png').convert_alpha()  # frame jump
+        self.player_voando = pygame.image.load('assets/macaco/macacovoando.png').convert_alpha() # frame voando
+        self.player_desviar = pygame.image.load('assets/macaco/desviar.png').convert_alpha() # frame desviar
         self.player_desviar = pygame.transform.scale2x(self.player_desviar)
         self.player_index = 0  # numero da imagem (frame) que vai aparecer no self image
         self.image = macaco2  # imagem incial
         self.rect = self.image.get_rect(topleft = (150, HEIGHT))  ## o retângulo da imagem
         self.gravity = 0
-        self.jump_sound = pygame.mixer.Sound('sound/jump.mp3')
-        self.lose_sound = pygame.mixer.Sound('sound/lose.mp3')
+        self.jump_sound = pygame.mixer.Sound('assets/sound/jump.mp3')
+        self.lose_sound = pygame.mixer.Sound('assets/sound/lose.mp3')
         self.jump_sound.set_volume(0.5)
     def player_controle(self):
         keys = pygame.key.get_pressed()
@@ -97,63 +97,63 @@ class Obstacle(pygame.sprite.Sprite):  ## classe de obstáculos
         super().__init__()
         self.type = type
         if type == 'passaro':
-            passaro1 = pygame.image.load('passaro/passaro.png').convert_alpha()
-            passaro2 = pygame.image.load('passaro/passaro1.png').convert_alpha()
-            passaro3 = pygame.image.load('passaro/passaro2.png').convert_alpha()
+            passaro1 = pygame.image.load('assets/passaro/passaro.png').convert_alpha()
+            passaro2 = pygame.image.load('assets/passaro/passaro1.png').convert_alpha()
+            passaro3 = pygame.image.load('assets/passaro/passaro2.png').convert_alpha()
             passaro1 = pygame.transform.scale2x(passaro1)
             passaro2 = pygame.transform.scale2x(passaro2)
             passaro3 = pygame.transform.scale2x(passaro3)
             self.frames = [passaro1, passaro2, passaro3]
             y_pos = HEIGHT-115
         if type == 'passaro2':
-            passaro1 = pygame.image.load('passaro/passaro.png').convert_alpha()
-            passaro2 = pygame.image.load('passaro/passaro1.png').convert_alpha()
-            passaro3 = pygame.image.load('passaro/passaro2.png').convert_alpha()
+            passaro1 = pygame.image.load('assets/passaro/passaro.png').convert_alpha()
+            passaro2 = pygame.image.load('assets/passaro/passaro1.png').convert_alpha()
+            passaro3 = pygame.image.load('assets/passaro/passaro2.png').convert_alpha()
             passaro1 = pygame.transform.scale2x(passaro1)
             passaro2 = pygame.transform.scale2x(passaro2)
             passaro3 = pygame.transform.scale2x(passaro3)
             self.frames = [passaro1, passaro2, passaro3]
             y_pos = HEIGHT-120
         if type == 'urso':
-            urso1 = pygame.image.load('urso/ursofinal/urso1.png').convert_alpha()
-            urso2 = pygame.image.load('urso/ursofinal/urso2.png').convert_alpha()
-            urso3 = pygame.image.load('urso/ursofinal/urso3.png').convert_alpha()
+            urso1 = pygame.image.load('assets/urso/ursofinal/urso1.png').convert_alpha()
+            urso2 = pygame.image.load('assets/urso/ursofinal/urso2.png').convert_alpha()
+            urso3 = pygame.image.load('assets/urso/ursofinal/urso3.png').convert_alpha()
             urso1 = pygame.transform.scale2x(urso1)
             urso2 = pygame.transform.scale2x(urso2)
             urso3 = pygame.transform.scale2x(urso3)
             self.frames = [urso1, urso2, urso3]
             y_pos =HEIGHT-87
         if type == 'banana':
-            banana = pygame.image.load('banana/banana.png').convert_alpha()
-            banana1 = pygame.image.load('banana/banana1.png').convert_alpha()
+            banana = pygame.image.load('assets/banana/banana.png').convert_alpha()
+            banana1 = pygame.image.load('assets/banana/banana1.png').convert_alpha()
             banana = pygame.transform.scale2x(banana)
             banana1 = pygame.transform.scale2x(banana1)
             self.frames = [banana, banana1]
             y_pos = HEIGHT-98
         if type == 'melancia':
-            melanciama = pygame.image.load('melancia/melanciama.png').convert_alpha()
-            melanciama2 = pygame.image.load('melancia/melanciama2.png').convert_alpha()
+            melanciama = pygame.image.load('assets/melancia/melanciama.png').convert_alpha()
+            melanciama2 = pygame.image.load('assets/melancia/melanciama2.png').convert_alpha()
             melanciama = pygame.transform.scale2x(melanciama)
             melanciama2 = pygame.transform.scale2x(melanciama2)
             self.frames = [melanciama, melanciama2]
             y_pos = HEIGHT-106
         if type == 'melancia2':
-            melanciama = pygame.image.load('melancia/melanciama.png').convert_alpha()
-            melanciama2 = pygame.image.load('melancia/melanciama2.png').convert_alpha()
+            melanciama = pygame.image.load('assets/melancia/melanciama.png').convert_alpha()
+            melanciama2 = pygame.image.load('assets/melancia/melanciama2.png').convert_alpha()
             melanciama = pygame.transform.scale2x(melanciama)
             melanciama2 = pygame.transform.scale2x(melanciama2)
             self.frames = [melanciama, melanciama2]
             y_pos = HEIGHT-105
         if type == 'snowman':
-            snowman = pygame.image.load('snowman/snowman_left_1.png').convert_alpha()
-            snowman2 = pygame.image.load('snowman/snowman_left_2.png').convert_alpha()
-            snowman3 = pygame.image.load('snowman/snowman_right_1.png').convert_alpha()
-            snowman4 = pygame.image.load('snowman/snowman_right_2.png').convert_alpha()
+            snowman = pygame.image.load('assets/snowman/snowman_left_1.png').convert_alpha()
+            snowman2 = pygame.image.load('assets/snowman/snowman_left_2.png').convert_alpha()
+            snowman3 = pygame.image.load('assets/snowman/snowman_right_1.png').convert_alpha()
+            snowman4 = pygame.image.load('assets/snowman/snowman_right_2.png').convert_alpha()
             self.frames = [snowman, snowman2,snowman3,snowman4]
             y_pos = HEIGHT-76
         if type == 'snowflake':
-            snowflake = pygame.image.load('snowflake/snowflake.png').convert_alpha()
-            snowflake1 = pygame.image.load('snowflake/snowflake1.png').convert_alpha()
+            snowflake = pygame.image.load('assets/snowflake/snowflake.png').convert_alpha()
+            snowflake1 = pygame.image.load('assets/snowflake/snowflake1.png').convert_alpha()
             self.frames = [snowflake, snowflake1]
             y_pos = HEIGHT-76
         self.animation_index = 0
@@ -172,7 +172,7 @@ class Obstacle(pygame.sprite.Sprite):  ## classe de obstáculos
         self.rect.x -= 6  # decrescendo o x para se movimentar na tela
         self.destroy()
 def collision_sprite():   # colisão do macaco com o  grupo de obstáculos
-    lose_sound = pygame.mixer.Sound('sound/lose.mp3')
+    lose_sound = pygame.mixer.Sound('assets/sound/lose.mp3')
     dificuldade = 800
     if pygame.sprite.spritecollide(player.sprite,obstacle_group,False): # pygame.sprite.spritecollide() retorna uma lista contendo os sprites colididos com um determinado sprite de referência.
         if somativo1 == 0:
@@ -187,8 +187,8 @@ class Banana(pygame.sprite.Sprite): ## bananas
     def __init__(self,type):
         super().__init__()
         if type == 'banana':
-            bananaboa = pygame.image.load('banana/bananaboa.png').convert_alpha()
-            bananaboa1 = pygame.image.load('banana/bananaboa1.png').convert_alpha()
+            bananaboa = pygame.image.load('assets/banana/bananaboa.png').convert_alpha()
+            bananaboa1 = pygame.image.load('assets/banana/bananaboa1.png').convert_alpha()
             bananaboa = pygame.transform.scale2x(bananaboa)
             bananaboa1 = pygame.transform.scale2x(bananaboa1)
             self.frames = [bananaboa, bananaboa1]
@@ -209,7 +209,7 @@ class Banana(pygame.sprite.Sprite): ## bananas
         self.rect.x -= 6
         self.destroy()
 def collision2_sprite():  #colisão macaco e a banana boa
-    coin_sound = pygame.mixer.Sound('sound/coin.mp3')
+    coin_sound = pygame.mixer.Sound('assets/sound/coin.mp3')
     collisions = pygame.sprite.spritecollide(player.sprite, obstacle_group2, False)  # pygame.sprite.spritecollide() retorna uma lista contendo os sprites colididos com um determinado sprite de referência
     for banana in collisions: # itero sobre os sprites colidos do grupo de banana(obstacle_group2)
         banana.kill()
@@ -221,15 +221,15 @@ class Melancia(pygame.sprite.Sprite):  ##melancias
     def __init__(self,type):
         super().__init__()
         if type == 'melancia':
-            melancia = pygame.image.load('melancia/melancia.png').convert_alpha()
-            melancia1 = pygame.image.load('melancia/melancia1.png').convert_alpha()
+            melancia = pygame.image.load('assets/melancia/melancia.png').convert_alpha()
+            melancia1 = pygame.image.load('assets/melancia/melancia1.png').convert_alpha()
             melancia = pygame.transform.scale2x(melancia)
             melancia1 = pygame.transform.scale2x(melancia1)
             self.frames = [melancia, melancia1]
             y_pos = HEIGHT-70
         if type == 'melancia2':
-            melancia = pygame.image.load('melancia/melancia.png').convert_alpha()
-            melancia1 = pygame.image.load('melancia/melancia1.png').convert_alpha()
+            melancia = pygame.image.load('assets/melancia/melancia.png').convert_alpha()
+            melancia1 = pygame.image.load('assets/melancia/melancia1.png').convert_alpha()
             melancia = pygame.transform.scale2x(melancia)
             melancia1 = pygame.transform.scale2x(melancia1)
             self.frames = [melancia, melancia1]
@@ -250,7 +250,7 @@ class Melancia(pygame.sprite.Sprite):  ##melancias
         self.rect.x -= 6
         self.destroy()
 def collision3_sprite(): # colisão macaco e melancia
-    coin_sound = pygame.mixer.Sound('sound/coin.mp3')  # false, os sprits colididos n seram removidos após a colisão.
+    coin_sound = pygame.mixer.Sound('assets/sound/coin.mp3')  # false, os sprits colididos n seram removidos após a colisão.
     collisions = pygame.sprite.spritecollide(player.sprite, obstacle_group3, False) #pygame.sprite.spritecollide() retorna uma lista contendo os sprites colididos com um determinado sprite de referência
     for melancia in collisions: # itero sobre os sprites colidos
         melancia.kill()
@@ -260,7 +260,7 @@ def collision3_sprite(): # colisão macaco e melancia
 class Neve(pygame.sprite.Sprite): # bola de neve 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('neve/neve.png').convert_alpha()
+        self.image = pygame.image.load('assets/neve/neve.png').convert_alpha()
         for i in player:
             x = i.rect.x
             y = i.rect.y
@@ -300,7 +300,7 @@ class neveStatus(pygame.sprite.Sprite): # bola de neve
     def show_health(self):
         return self.current_health
 def collision4_sprite():  # colisão bola de neve e obstáculos
-    killsound = pygame.mixer.Sound('sound/kill.mp3')
+    killsound = pygame.mixer.Sound('assets/sound/kill.mp3')
 
     # Criar um novo grupo de sprites para os obstáculos desejados
     obstacles_to_check_group = pygame.sprite.Group()
@@ -343,14 +343,14 @@ obstacle_group2 = pygame.sprite.Group() #   grupo de bananas, mas n podemos adic
 obstacle_group3 = pygame.sprite.Group() #   grupo dos melancias, mas n podemos adicionar os obstaculos no grupo agora, somente quando o timer começar
 obstacle_group4 = pygame.sprite.Group() #   grupo  de bolas de neve
 # carregar imagens
-telainicial = pygame.image.load('telainicial/background.png').convert_alpha()
-bg = pygame.image.load('fundo/bg.png').convert_alpha()
+telainicial = pygame.image.load('assets/telainicial/background.png').convert_alpha()
+bg = pygame.image.load('assets/fundo/bg.png').convert_alpha()
 telainicial = pygame.transform.scale(telainicial, (WIDTH, HEIGHT))
-score1 = pygame.image.load('score/score.png').convert_alpha()
+score1 = pygame.image.load('assets/score/score.png').convert_alpha()
 score1 = pygame.transform.scale2x(score1)
-heart = pygame.image.load('hp/hp.png').convert_alpha()
-boladeneve = pygame.image.load('neve/neve.png').convert_alpha()  
-lose_sound = pygame.mixer.Sound('sound/lose.mp3') 
+heart = pygame.image.load('assets/hp/hp.png').convert_alpha()
+boladeneve = pygame.image.load('assets/neve/neve.png').convert_alpha()  
+lose_sound = pygame.mixer.Sound('assets/sound/lose.mp3') 
 Ccanal_efeitos_sonoros = 1
 Ccanal_efeitos_sonoros2 = 2
 Ccanal_efeitos_sonoros3 = 3
@@ -360,37 +360,37 @@ Ccanal_efeitos_sonoros6 = 6
 Ccanal_efeitos_sonoros7 = 7
 
 #sound pause
-soundicon = pygame.image.load('soundicon/sound.png').convert_alpha()
+soundicon = pygame.image.load('assets/soundicon/sound.png').convert_alpha()
 sound_rect = soundicon.get_rect(topleft = ((WIDTH*0.9, HEIGHT*0.01)))
 somativo1 = 0
-soundicon2 = pygame.image.load('soundicon/sound2.png').convert_alpha()
+soundicon2 = pygame.image.load('assets/soundicon/sound2.png').convert_alpha()
 sound_rect2 = soundicon.get_rect(topleft = ((WIDTH*0.9, HEIGHT*0.01)))
-soundicon3 = pygame.image.load('soundicon/sound.png').convert_alpha()
+soundicon3 = pygame.image.load('assets/soundicon/sound.png').convert_alpha()
 sound_rect3 = soundicon.get_rect(topleft = ((WIDTH*0.7, HEIGHT*0.01)))
-soundicon4 = pygame.image.load('soundicon/sound2.png').convert_alpha()
+soundicon4 = pygame.image.load('assets/soundicon/sound2.png').convert_alpha()
 sound_rect4 = soundicon.get_rect(topleft = ((WIDTH*0.7, HEIGHT*0.01)))
 #intro do jogo
-jogar = pygame.image.load('telainicial/JOGAR.png').convert_alpha() 
-tutorial = pygame.image.load('telainicial/tutorial.png').convert_alpha()  
-sair = pygame.image.load('telainicial/SAIR.png').convert_alpha()
-background = pygame.image.load('telainicial/background.png').convert_alpha()
+jogar = pygame.image.load('assets/telainicial/JOGAR.png').convert_alpha() 
+tutorial = pygame.image.load('assets/telainicial/tutorial.png').convert_alpha()  
+sair = pygame.image.load('assets/telainicial/SAIR.png').convert_alpha()
+background = pygame.image.load('assets/telainicial/background.png').convert_alpha()
 jogar = pygame.transform.scale2x(jogar)
 tutorial = pygame.transform.scale2x(tutorial)
 sair = pygame.transform.scale2x(sair)
 # gameover
-gameover = pygame.image.load('gameover/gameover.png').convert_alpha()
+gameover = pygame.image.load('assets/gameover/gameover.png').convert_alpha()
 gameover = pygame.transform.scale(gameover, (WIDTH,HEIGHT))
-gameovermsg = pygame.image.load('gameover/gameovermsg.png').convert_alpha()
+gameovermsg = pygame.image.load('assets/gameover/gameovermsg.png').convert_alpha()
 gameovermsg = pygame.transform.scale2x(gameovermsg)
-menu = pygame.image.load('gameover/MENU.png').convert_alpha()
-novamente = pygame.image.load('gameover/novamente.png').convert_alpha()
+menu = pygame.image.load('assets/gameover/MENU.png').convert_alpha()
+novamente = pygame.image.load('assets/gameover/novamente.png').convert_alpha()
 novamente = pygame.transform.scale2x(novamente)
-SCORE = pygame.image.load('gameover/score.png').convert_alpha()
+SCORE = pygame.image.load('assets/gameover/score.png').convert_alpha()
 SCORE = pygame.transform.scale2x(SCORE)
-HIGHEST = pygame.image.load('score/highest.png').convert_alpha()
+HIGHEST = pygame.image.load('assets/score/highest.png').convert_alpha()
 HIGHEST = pygame.transform.scale2x(HIGHEST)
-musica = pygame.image.load('score/musica.png').convert_alpha()
-efeitossonoros = pygame.image.load('score/efeitossonoros.png').convert_alpha()
+musica = pygame.image.load('assets/score/musica.png').convert_alpha()
+efeitossonoros = pygame.image.load('assets/score/efeitossonoros.png').convert_alpha()
 background_width = bg.get_width()
 bg = pygame.transform.scale(bg, (background_width, HEIGHT))
 bg_rect = bg.get_rect()
@@ -410,17 +410,17 @@ obstacle_timer = pygame.USEREVENT + 1 # melhor spawn de obstáculos adicionar +1
 dificuldade = 800  
 pygame.time.set_timer(obstacle_timer,dificuldade) #aumenta a dificuldade ( executar o evento custom do obstacle_timer em um certo intervalo) (evento que quero executar, e quantas vezes quero executar em milisegundos)
 # menu de pause
-pause = pygame.image.load('pause/pause.jpg').convert_alpha()
+pause = pygame.image.load('assets/pause/pause.jpg').convert_alpha()
 pause = pygame.transform.scale(pause, (WIDTH, HEIGHT))
-voltar = pygame.image.load('pause/voltar.png').convert_alpha()
+voltar = pygame.image.load('assets/pause/voltar.png').convert_alpha()
 voltar = pygame.transform.scale2x(voltar)
 voltar_rect = voltar.get_rect(topleft = (WIDTH*0.41, HEIGHT*0.5))
 voltar2_rect = voltar.get_rect(topleft = (WIDTH*0.83, HEIGHT*0.9))
 #menu de tutorial
-menututorial = pygame.image.load('tutorial/tutorial.png').convert_alpha()
+menututorial = pygame.image.load('assets/tutorial/tutorial.png').convert_alpha()
 menututorial = pygame.transform.scale(menututorial, (WIDTH, HEIGHT))
 #level
-level = pygame.image.load('score/level.png').convert_alpha()
+level = pygame.image.load('assets/score/level.png').convert_alpha()
 level = pygame.transform.scale2x(level)
 neve_obj = neveStatus()
 neve1 = pygame.sprite.GroupSingle()
@@ -431,13 +431,13 @@ somativo =0
 valor = 0
 reserva = 0
 reserva2 = 0
-monkeysound = pygame.mixer.Sound('sound/monkey.mp3')
-snowball = pygame.mixer.Sound('sound/snowball.mp3')
-fatality = pygame.mixer.Sound('sound/fatality.mp3')
+monkeysound = pygame.mixer.Sound('assets/sound/monkey.mp3')
+snowball = pygame.mixer.Sound('assets/sound/snowball.mp3')
+fatality = pygame.mixer.Sound('assets/sound/fatality.mp3')
 fonte_contador = pygame.font.Font(None, 45)
 fonte_contadorhighestscore = pygame.font.Font(None, 45)
 contadorbolas = False
-pygame.mixer.music.load('sound/background.mp3')
+pygame.mixer.music.load('assets/sound/background.mp3')
 pygame.mixer_music.play(-1)
 pygame.mixer.music.set_volume(0.3)
 levelcont = 1
