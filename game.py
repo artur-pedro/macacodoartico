@@ -28,7 +28,7 @@ class Player(pygame.sprite.Sprite):   #classe sprite para o player, sprite = sur
         self.player_desviar = pygame.transform.scale2x(self.player_desviar)
         self.player_index = 0  # numero da imagem (frame) que vai aparecer no self image
         self.image = macaco2  # imagem incial
-        self.rect = self.image.get_rect(topleft = (20, HEIGHT))  ## o retângulo da imagem
+        self.rect = self.image.get_rect(topleft = (150, HEIGHT))  ## o retângulo da imagem
         self.gravity = 0
         self.jump_sound = pygame.mixer.Sound('sound/jump.mp3')
         self.lose_sound = pygame.mixer.Sound('sound/lose.mp3')
@@ -265,7 +265,7 @@ class Neve(pygame.sprite.Sprite): # bola de neve
             x = i.rect.x
             y = i.rect.y
             y_pos = y
-        self.rect = self.image.get_rect(topleft = (30 ,y_pos))
+        self.rect = self.image.get_rect(topleft = (150 ,y_pos))
     def update(self):
         self.rect.x += 6
         if self.rect.x >= WIDTH + 200:   # se a posição da bola estiver muito a esquerda, ela some, para n lagar o jogo
@@ -332,7 +332,7 @@ def return_mixer1():
 pygame.init()
 HEIGHT = 768
 WIDTH = 1360
-screen = pygame.display.set_mode((WIDTH,HEIGHT))
+screen = pygame.display.set_mode((WIDTH,HEIGHT), pygame.SCALED|pygame.FULLSCREEN)
 pygame.display.set_caption("Macaco do Ártico")
 Clock = pygame.time.Clock()
 jogo_ativo = 0 # condição para o jogo iniciar
