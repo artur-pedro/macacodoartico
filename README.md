@@ -1,13 +1,25 @@
 # Macaco do Ártico
-- O jogo se passa na região do Ártico,  você é um macaco que tem a tarefa de coletar o maior número de melancias e bananas possíveis, enquanto desvia dos obstáculos.
-  Você também possui a habilidade de jogar bolas de neve nos obstáculos.
+
+O jogo se passa na região do Ártico,  você é um macaco que tem a tarefa de coletar o maior número de melancias e bananas possíveis, enquanto desvia dos obstáculos.
+Você também possui a habilidade de jogar bolas de neve nos obstáculos.
 
 ## Requisitos
+
 1. Ter o Python instalado.
 2. Ter o Pygame instalado.
 
 ## Instalação do Pygame
-- Digite `pip install pygame` no seu pompt de comando para instalar o Pygame. Dependendo da distribuição e da versão que você estiver usando, use `pip3 install pygame` em vez disso.
+Digite:
+
+```shell
+pip install pygame
+```
+
+no seu pompt de comando para instalar o Pygame. Dependendo da distribuição e da versão que você estiver usando, use:
+
+```shell
+pip3 install pygame
+```
 
 ## Como jogar
 - Execute o arquivo `game.py` para dar início ao jogo.
