@@ -407,7 +407,7 @@ sair_rect = sair.get_rect(topleft = (WIDTH*0.435, HEIGHT*0.7  ))
 contadorbolas1 = 0
 # timer
 obstacle_timer = pygame.USEREVENT + 1 # melhor spawn de obstáculos adicionar +1 para n dar conflito com os eventos do pygame ( custom user event)
-dificuldade = 800  
+dificuldade = 1500  
 pygame.time.set_timer(obstacle_timer,dificuldade) #aumenta a dificuldade ( executar o evento custom do obstacle_timer em um certo intervalo) (evento que quero executar, e quantas vezes quero executar em milisegundos)
 # menu de pause
 pause = pygame.image.load('assets/pause/pause.jpg').convert_alpha()
@@ -459,7 +459,8 @@ while True:
             if neve_valor >= 100:
                 contadorbolas = True
             if  contadorativo == 1:
-                player.sprite.get_damage(1)
+                # diminui a quantidade de dano
+                player.sprite.get_damage(0.3) 
                 health =  player.sprite.show_health()
                 if health <= 0:
                     time.sleep(0.1)
@@ -493,6 +494,7 @@ while True:
                 if event.key == pygame.K_SPACE:
                     jogador_pula = True
         if jogo_ativo == 0:
+            reserva = 0
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if sound_rect.collidepoint(event.pos):
                     if somativo == 0:
@@ -508,10 +510,12 @@ while True:
                         somativo1 = 0
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:  #reiniciar o jogo depois de perder apertando espaço
                 jogo_ativo = 1
+                reserva = 0
             mouse_pos = pygame.mouse.get_pos()
             if event.type == pygame.MOUSEBUTTONDOWN:
                     if jogar_rect.collidepoint(event.pos):
                         jogo_ativo = 1
+                        reserva = 0
             if event.type == pygame.MOUSEBUTTONDOWN:
                     if sair_rect.collidepoint(event.pos):
                         pygame.quit()
@@ -527,6 +531,7 @@ while True:
                 obstacle_group4.empty()
                 time.sleep(0.5)
                 jogo_ativo = 1
+                reserva = 0
             if event.type == pygame.MOUSEBUTTONDOWN:
                  if menu_rect.collidepoint(event.pos):
                      jogo_ativo = 0
@@ -538,6 +543,7 @@ while True:
                     obstacle_group4.empty()
                     time.sleep(0.5)
                     jogo_ativo = 1
+                    reserva = 0
         if event.type == pygame.KEYDOWN:  ### inciair tela pause
             if event.key == pygame.K_ESCAPE:
                 if jogo_ativo == 1:
@@ -655,7 +661,6 @@ while True:
         contador_texto3 = fonte_contador.render(f' {levelcont}', True, (255, 255, 255))
         screen.blit(contador_texto3, (WIDTH*0.86, HEIGHT*0.2))
         screen.blit(contador_highestscore, (WIDTH*0.09, HEIGHT*0.25))
-        
     if jogo_ativo == 0:
         obstacle_group.empty()
         obstacle_group2.empty()
@@ -666,6 +671,7 @@ while True:
         player.sprite.get_health(100)
         contadorbolas1 = 0
         levelcont = 1
+        reserva = 0
         reserva2 = 0
         dificuldade = 800
         valor = 0
